@@ -9,9 +9,11 @@ import se.chimps.embeddable.web.framework.api.{Bytes, HttpRequest, HttpResponse}
 import se.chimps.embeddable.web.framework.api.{Form => FormData}
 
 import scala.concurrent.duration.Duration
-import scala.concurrent.{Await, Future}
+import scala.concurrent.{Await, ExecutionContext, Future}
 
 trait CameltowBridge {
+
+	implicit def ec:ExecutionContext
 
 	def bridge:(Request)=>Future[Response] = (req) => {
 		val method = req.method
