@@ -1,6 +1,6 @@
 name := "ewf-bridge"
 
-version := "20180216"
+version := "20180217"
 
 scalaVersion := "2.12.4"
 
